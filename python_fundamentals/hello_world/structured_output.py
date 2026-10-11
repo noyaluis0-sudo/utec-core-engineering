@@ -3,7 +3,7 @@
     language = "Python"
     version = 3
     pi_approx = 3.14
-    computation_valid = True
+    computation_valid = 10 > 5
 
     print(f"Language: {language}")
     print(f"Version: {version}")
