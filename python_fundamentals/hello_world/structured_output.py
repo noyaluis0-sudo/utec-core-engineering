@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
     language = "Python"
     version = 3
     pi_approx = 3.14
