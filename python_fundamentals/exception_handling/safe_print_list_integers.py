@@ -4,7 +4,7 @@ def safe_print_list_integers(my_list=[], x=0):
     count = 0
     for i in range(x):
         try:
-            # Si my_list[i] no existe, lanzará IndexError fuera del try-except de formato
+            # Si my_list[i] no existe, lanzará IndexError.
             element = my_list[i]
             print("{:d}".format(element), end="")
             count += 1
