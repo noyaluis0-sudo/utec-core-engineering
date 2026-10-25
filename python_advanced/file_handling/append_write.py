@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-
-"""Módulo para añadir texto al final de un archivo."""
-
+"""Module for adding text to the end of a file."""
 def append_write(filename="", text=""):
-
-"""Añade texto al final de un archivo"""
+    """Añade texto al final de un archivo y devuelve los caracteres añadidos."""
     with open(filename, mode="a", encoding="utf-8") as file:
         return file.write(text)
+    
