@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+"""Module for reading a text file."""
 
-read_file = __import__('read_file').read_file
 
-with open("my_file_0.txt", "r", encoding="utf-8") as f:
-
-read_file("my_file_0.txt")
+def read_file(filename=""):
+    """Read a UTF-8 text file and print its contents."""
+    with open(filename, encoding="utf-8") as file:
+        print(file.read(), end="")
