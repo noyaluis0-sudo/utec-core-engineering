@@ -35,4 +35,4 @@ class Rectangle(base_geometry.BaseGeometry):
         Returns:
             str: Descripción en formato [Rectangle] <width>/<height>.
         """
-        return "[Rectangle] {}/{}".format(self.__width * self.__height)
+        return self.__width * self.__height
