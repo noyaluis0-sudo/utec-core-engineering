@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Módulo que define la clase Rectangle con área y descripción."""
-from .base_geometry import BaseGeometry
+from base_geometry import BaseGeometry
 
 
 class Rectangle(BaseGeometry):
