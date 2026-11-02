@@ -29,10 +29,5 @@ class Rectangle(base_geometry.BaseGeometry):
         return self.__width * self.__height
 
     def __str__(self):
-        """
-        Devuelve una representación legible del rectángulo.
-        
-        Returns:
-            str: Descripción en formato [Rectangle] <width>/<height>.
-        """
-        return self.__width * self.__height
+     return self.__width * self.__height
+    
