@@ -24,7 +24,7 @@ for animal in animals:
 
 dog = Dog()
 
-print(isinstance(dog, Dog))
-print(isinstance(dog, Animal))
+print(isinstance(dog, Dog)) #comprueba si dog es una instancia de la clase Dog
+print(isinstance(dog, Animal)) # comprueba si dog es una instancia de la clase Animal
 
-print(issubclass(Dog, Animal))
+print(issubclass(Dog, Animal)) #comprueba si Dog es una subclase de Animal
