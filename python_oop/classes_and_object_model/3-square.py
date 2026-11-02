@@ -24,6 +24,7 @@ class Square:
 
         self.__size = size
     def area(self):
+        
         """
         Calcula el área del cuadrado.
 
