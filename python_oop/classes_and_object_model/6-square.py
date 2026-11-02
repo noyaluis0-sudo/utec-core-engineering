@@ -7,7 +7,7 @@ class Square:
     """Representa un cuadrado."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Inicializa el cuadrado con tamaño y posición opcionales."""
+        """Inicializa el cuadrado con tamaño y posición."""
         self.size = size
         self.position = position
 
@@ -18,7 +18,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Establece el tamaño con validaciones de tipo y valor."""
+        """Establece el tamaño con validaciones."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -27,18 +27,12 @@ class Square:
 
     @property
     def position(self):
-        """Recupera la posición del cuadrado."""
+        """Recupera la posición."""
         return self.__position
 
-    @size.setter
     @position.setter
     def position(self, value):
-        """
-        Establece la posición con validación de tupla de 2 enteros positivos.
-
-        Args:
-            value (tuple): Tupla de dos enteros (x, y).
-        """
+        """Establece la posición con validaciones."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(i, int) for i in value) or
                 not all(i >= 0 for i in value)):
@@ -50,23 +44,24 @@ class Square:
         return self.__size * self.__size
 
     def __str__(self):
-        """Genera la representación en cadena del cuadrado para print()."""
+        """Devuelve la representación en cadena del cuadrado."""
+        res = ""
         if self.__size == 0:
-            return ""
+            return res
 
-        res = []
-        # Añadir el espacio vertical (posición y)
-        res.append("\n" * self.__position[1])
-        # Añadir cada fila con el espacio horizontal (posición x)
-        for _ in range(self.__size):
-            res.append(" " * self.__position[0] + "#" * self.__size + "\n")
-
-        return "".join(res).rstrip("\n")
+        # Espacio vertical (y)
+        res += "\n" * self.__position[1]
+        
+        # Filas del cuadrado con espacio horizontal (x)
+        for i in range(self.__size):
+            res += " " * self.__position[0] + "#" * self.__size
+            if i < self.__size - 1:
+                res += "\n"
+        return res
 
     def my_print(self):
-        """Imprime el cuadrado en stdout respetando la posición."""
-        output = self.__str__()
-        if output == "" and self.__size == 0:
+        """Imprime el cuadrado en stdout."""
+        if self.__size == 0:
             print("")
         else:
-            print(output)
+            print(self.__str__())
