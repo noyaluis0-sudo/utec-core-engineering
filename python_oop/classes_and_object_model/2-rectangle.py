@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Módulo que define la clase Rectangle."""
-# Importamos la clase exacta que el sistema de pruebas utiliza
+"""Módulo que define la clase Rectangle con área y descripción."""
 from base_geometry import BaseGeometry
 
 
@@ -9,10 +8,31 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """
-        Inicializa un rectángulo con validación de la clase padre.
+        Inicializa un rectángulo con validación de dimensiones.
+
+        Args:
+            width (int): El ancho del rectángulo.
+            height (int): La altura del rectángulo.
         """
-        # Es fundamental usar el validador heredado
         self.integer_validator("width", width)
         self.__width = width
         self.integer_validator("height", height)
         self.__height = height
+
+    def area(self):
+        """
+        Calcula y devuelve el área del rectángulo.
+        
+        Returns:
+            int: El área (ancho * altura).
+        """
+        return self.__width * self.__height
+
+    def __str__(self):
+        """
+        Devuelve una representación legible del rectángulo.
+        
+        Returns:
+            str: Descripción en formato [Rectangle] <width>/<height>.
+        """
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
